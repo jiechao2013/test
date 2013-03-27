@@ -1,0 +1,41 @@
+{% extends 'AtlasGalleryBundle::layout.html.twig' %}
+
+{% block title %}Atlas - Gallery{% endblock %}
+
+{% block content_header '' %}
+
+{% block content %}
+    {% set version = constant('Symfony\\Component\\HttpKernel\\Kernel::MAJOR_VERSION') ~ '.' ~ constant('Symfony\\Component\\HttpKernel\\Kernel::MINOR_VERSION')%}
+	<div id="GalleryContent">
+		<div class="sort">
+			<label>Sort by:</label>
+			<select name="sort" id="gallerySort">
+				<option value="name">name ascending</option>
+			</select>
+		</div>
+		<div class="galleryItems">
+		{% for item in items %}
+			{% set preview = "" %}
+			{% if item.preview is defined %}
+				{% set preview = item.preview %}
+			{% endif %}
+			{% set id = "" %}
+			{% if item.guid is defined %}
+				{% set id = item.guid %}
+			{% else %}
+				{% set id = item.id %}
+			{% endif %}
+			 
+			<div class="galleryItem">
+				<table cellspacing="0" cellpadding="0"><tr><td>
+					<a href="/product/{{ id }}">
+					<img alt="{{ item.name }}" src="{{ preview }}" />
+					</a>
+				</td></tr></table>
+				<div class="galleryItemName"><a href="/product/{{ id }}">{{ item.name }}</a></div>
+			</div>
+		{% endfor %}
+			<div class="clear"></div>
+		</div>
+	</div>
+{% endblock %}

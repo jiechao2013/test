@@ -1,0 +1,63 @@
+.initialProgress {
+	background: url('../images/loading_bg.png');
+	opacity: .75;
+	color: #484848;
+	height: 107px;
+	width: 600px;
+	text-align: center;
+	font-size: 14px;
+}
+
+.signatureImage {
+	position: absolute;
+	top: 0px;
+	float: left;
+	width: 600px;
+	height: 600px;
+	z-index: -1;
+}
+
+.viewerCanvas {
+	position: absolute;
+	top: 0px;
+	float: left;
+	width: 600px;
+	height: 600px;
+	z-index: -1;
+}
+
+#initialProgress .ui-progressbar {
+	border-width: 1px;
+	border-style: solid;
+	color: #FFFFFF;
+	background-image: none;
+	background-color: transparent;
+	width: 320px;
+	border-radius: 4px 4px 4px 4px;
+	height: 8px;
+	margin: 8px auto 0;
+}
+
+#progressBar .ui-progressbar-value {
+	height: 8px;
+	width: 100px;
+	border: 1px solid #DDDDDD;
+	background: #DDDDDD;
+}
+
+.dialContainer {
+	float:left;	
+	height:64px;
+	width:64px;
+	margin-right:2px;
+	border:1px solid #EBEBED;
+	position:relative;
+}
+
+.dial {
+	display: none;
+}
+
+.status {
+	display: none;
+}

@@ -1,0 +1,26 @@
+atlas_gallery_homepage:
+    pattern:  /gallery/{galleryname}
+    defaults: { _controller: AtlasGalleryBundle:Default:gallery }
+
+atlas_gallery_homepage_default:
+    pattern: /gallery
+    defaults: { _controller: AtlasGalleryBundle:Default:gallery }
+
+atlas_gallery_homepage_default_empty:
+    pattern: /gallery/
+    defaults: { _controller: AtlasGalleryBundle:Default:gallery }
+    
+atlas_gallery_product:
+    pattern:  /product/{productid}
+    defaults: { _controller: AtlasGalleryBundle:Default:product }
+    
+hello:
+    pattern:  /hello
+    defaults: { _controller: AtlasGalleryBundle:Default:hello }
+
+login:
+    pattern:  /login
+    defaults: { _controller: AtlasGalleryBundle:Default:login }
+    
+login_check:
+    pattern:  /login_check

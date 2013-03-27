@@ -1,0 +1,45 @@
+.login{
+    text-align: center;
+    margin-left: auto; 
+    margin-right: auto;  
+    display: table-cell; 
+    vertical-align: middle;
+    width:1200px;
+    height:600px;
+}
+.loginform{ 
+margin: 0 auto;
+text-align:center;
+border-radius: 10px;
+background-color:#f0f0f1;
+width:360px;
+height:310px;
+}
+
+.sitelogin{
+    font-size: 28px;
+    text-align: center;
+    line-height:89px;
+    width:360px;
+    height:90px;
+} 
+
+#username,#password,.loginsubmit{
+    font-size:18px;
+    width: 280px;
+    height: 40px;
+
+}
+#username,#password{
+        margin-bottom: 25px;  
+}
+
+.error{
+    height: 40px;
+    line-height:40px;
+    color:#FF0000;
+}
+.loginsubmit{
+ border:0;
+ background-image: url(../images/login.png);
+}

@@ -1,0 +1,21 @@
+{% extends "AtlasGalleryBundle::layout.html.twig" %}
+
+{% block title %}Atlas - login{% endblock %}
+
+{% block content %}
+<div class="login">
+<div class="white">
+<div class="loginform">
+<form method="post" action="login_check" id="login">
+<div class="sitelogin">Site Login</div>
+<input type="text" name="_username" id="username" value="{{ last_username }}" placeholder="username" onfocus="changecolor(this)" />
+<input type="password" name="_password" id="password" placeholder="Password" onfocus="changecolor(this)"  />
+<input type="submit" name="loginsubmit" class="loginsubmit" value="login" />
+    {% if error %}
+        <div class="error">{{ error.message }}</div>
+    {% endif %}
+    </form>
+</div>
+</div>
+</div>
+{% endblock %}

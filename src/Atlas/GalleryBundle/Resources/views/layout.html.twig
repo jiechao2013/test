@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <title>{% block title %}Atlas{% endblock %}</title>
+        <link rel="stylesheet" href="{{ asset('bundles/atlasgallery/css/default.css') }}" />
+		<link rel="stylesheet" href="{{ asset('bundles/atlasgallery/css/css.css') }}" />
+        <link rel="stylesheet" href="{{ asset('bundles/atlasgallery/css/login.css') }}" />
+	{% block header_javascript %}
+	<script src="{{ asset('bundles/atlasgallery/js/jquery-1.8.0.min.js') }}"></script>
+	<script src="{{ asset('bundles/atlasgallery/js/Atlas.js') }}"></script>
+	{% endblock %}
+    </head>
+    <body>	
+	<script language="javascript">
+		$j(document).ready(function(){
+				var atlas = AtlasGallery.getInstance();	
+                              
+/*     nextone=$j('.ThumbCurr');          
+     $j('.back').click(function(){
+     nextone.css("border", "1px solid #EBEBED");
+     nextone=nextone.prev();
+     nextone.css("border", "1px solid #A3A3A3");
+     viewer.rotateTo(nextone.attr('view'));
+     });
+     $j('.next').click(function(){
+     viewer.rotateTo(nextone.next().attr('view'));
+     nextone.css("border", "1px solid #EBEBED");
+     nextone=nextone.next();
+     nextone.css("border", "1px solid #A3A3A3");
+     });	*/
+				atlas.init();
+			}
+		)
+	</script>
+        <div id="atlas_wrapper">
+            <div id="atlas_header">
+                <div id="NavBar" class="atlasHeader">		
+			<div class="headerSearch">
+				<input type="input" id="headerKeyword" placeholder="Search" value="" />
+				<input type="submit" class="btnHeaderSearch" value="" />
+			</div>
+			<div class="headerCart">
+				empty
+			</div>
+			<div id="headerUser" class="headerUser">
+
+			</div>
+			<div id="headerUserPopup" class="hidden">
+				<div class="angle"></div>
+				<div class="popUpContainer">
+					<div id="popUpItems">
+						<div class="pItem popupUserName">TurboSquid-User</div>
+						<div class="pItem popupItem">Settings</div>
+						<div class="pItem popupItem">My Files</div>
+						<div class="pItem popupItem">Support</div>
+						<div class="divide"></div>
+						<div class="pItem popupItem">Logout</div>
+					</div>
+					<div id="popupTip" class="hidden">
+						Feature not <br/>implemented
+					</div>
+				</div>
+			</div>
+		</div>
+            </div>
+
+            {% block content_header %}
+            {% endblock %}
+
+            <div class="atlas_content">
+                {% block content %}
+                {% endblock %}
+            </div>
+
+            <div class="atlas_footer">
+                {% block footer %}
+		<div class="footer">
+			&copy; 2013 TurboSquid
+			End User License Agreement
+		</div>
+                {% endblock %}
+            </div>
+        </div>
+    </body>
+</html>
